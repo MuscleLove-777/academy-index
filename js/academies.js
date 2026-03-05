@@ -18,7 +18,7 @@ const ACADEMIES = [
     category: "資格・試験",
     levels: 6,
     modules: 24,
-    path: "../boki-academy/index.html"
+    path: "https://musclelove-777.github.io/boki-academy/"
   },
   {
     id: "comm",
@@ -31,7 +31,7 @@ const ACADEMIES = [
     category: "ビジネススキル",
     levels: 6,
     modules: 24,
-    path: "../comm-academy/index.html"
+    path: "https://musclelove-777.github.io/comm-academy/"
   },
   {
     id: "intimacy",
@@ -44,7 +44,7 @@ const ACADEMIES = [
     category: "ライフスキル",
     levels: 6,
     modules: 24,
-    path: "../intimacy-academy/index.html"
+    path: "https://musclelove-777.github.io/intimacy-academy/"
   },
   {
     id: "eps",
@@ -57,7 +57,7 @@ const ACADEMIES = [
     category: "企業・業界研究",
     levels: 6,
     modules: 24,
-    path: "../eps-academy/index.html"
+    path: "https://musclelove-777.github.io/eps-academy/"
   },
   {
     id: "pharma-sales",
@@ -70,7 +70,7 @@ const ACADEMIES = [
     category: "営業・セールス",
     levels: 6,
     modules: 24,
-    path: "../pharma-sales-academy/index.html"
+    path: "https://musclelove-777.github.io/pharma-sales-academy/"
   },
   {
     id: "sdtm",
@@ -83,7 +83,7 @@ const ACADEMIES = [
     category: "専門技術",
     levels: 6,
     modules: 24,
-    path: "../sdtm-academy/index.html"
+    path: "https://musclelove-777.github.io/sdtm-academy/"
   },
   {
     id: "stat",
@@ -96,7 +96,7 @@ const ACADEMIES = [
     category: "資格・試験",
     levels: 6,
     modules: 24,
-    path: "../stat-academy/index.html"
+    path: "https://musclelove-777.github.io/stat-academy/"
   },
   {
     id: "pk",
@@ -109,7 +109,7 @@ const ACADEMIES = [
     category: "専門技術",
     levels: 6,
     modules: 24,
-    path: "../pk-academy/index.html"
+    path: "https://musclelove-777.github.io/pk-academy/"
   },
   {
     id: "framework",
@@ -122,7 +122,7 @@ const ACADEMIES = [
     category: "ビジネススキル",
     levels: 6,
     modules: 24,
-    path: "../framework-academy/index.html"
+    path: "https://musclelove-777.github.io/framework-academy/"
   },
   {
     id: "smalltalk",
@@ -135,7 +135,7 @@ const ACADEMIES = [
     category: "ライフスキル",
     levels: 6,
     modules: 24,
-    path: "../smalltalk-academy/index.html"
+    path: "https://musclelove-777.github.io/smalltalk-academy/"
   },
   {
     id: "nomikai",
@@ -148,7 +148,7 @@ const ACADEMIES = [
     category: "ライフスキル",
     levels: 6,
     modules: 24,
-    path: "../nomikai-academy/index.html"
+    path: "https://musclelove-777.github.io/nomikai-academy/"
   },
   {
     id: "market-size",
@@ -161,7 +161,7 @@ const ACADEMIES = [
     category: "企業・業界研究",
     levels: 6,
     modules: 24,
-    path: "../market-size-academy/index.html"
+    path: "https://musclelove-777.github.io/market-size-academy/"
   },
   {
     id: "racehorse",
@@ -174,7 +174,7 @@ const ACADEMIES = [
     category: "ライフスキル",
     levels: 6,
     modules: 24,
-    path: "../racehorse-academy/index.html"
+    path: "https://musclelove-777.github.io/racehorse-academy/"
   },
   {
     id: "sas-graph",
@@ -187,7 +187,7 @@ const ACADEMIES = [
     category: "専門技術",
     levels: 6,
     modules: 24,
-    path: "../sas-graph-academy/index.html"
+    path: "https://musclelove-777.github.io/sas-graph-academy/"
   },
   {
     id: "ad-ops",
@@ -200,7 +200,7 @@ const ACADEMIES = [
     category: "ビジネススキル",
     levels: 6,
     modules: 24,
-    path: "../ad-ops-academy/index.html"
+    path: "https://musclelove-777.github.io/ad-ops-academy/"
   },
   {
     id: "sns-ops",
@@ -213,7 +213,7 @@ const ACADEMIES = [
     category: "ビジネススキル",
     levels: 6,
     modules: 24,
-    path: "../sns-ops-academy/index.html"
+    path: "https://musclelove-777.github.io/sns-ops-academy/"
   },
   {
     id: "creative",
@@ -226,7 +226,7 @@ const ACADEMIES = [
     category: "ビジネススキル",
     levels: 6,
     modules: 24,
-    path: "../creative-academy/index.html"
+    path: "https://musclelove-777.github.io/creative-academy/"
   },
   {
     id: "mgmt-accounting",
@@ -447,7 +447,7 @@ const ACADEMIES = [
     category: "ライフスキル",
     levels: 12,
     modules: 48,
-    path: "../osake-academy/index.html"
+    path: "https://musclelove-777.github.io/osake-academy/"
   },
   {
     id: "neko",
@@ -460,7 +460,7 @@ const ACADEMIES = [
     category: "ライフスキル",
     levels: 12,
     modules: 48,
-    path: "../neko-academy/index.html"
+    path: "https://musclelove-777.github.io/neko-academy/"
   }
 ];
 

@@ -616,26 +616,24 @@ footer {
     (function(){
         var HASH = 'e81f3b2738a2693705dcbf8417d48d20a2348ac3428466a0ca68ab804e26373e';
         var overlay = document.getElementById('authOverlay');
-        var mainContent = document.querySelectorAll('body > *:not(#authOverlay):not(script)');
+
+        function getMainElements() {
+            return document.querySelectorAll('body > *:not(#authOverlay):not(script)');
+        }
 
         function hideMain() {
-            for (var i = 0; i < mainContent.length; i++) {
-                mainContent[i].style.display = 'none';
+            var els = getMainElements();
+            for (var i = 0; i < els.length; i++) {
+                els[i].style.display = 'none';
             }
         }
 
         function showMain() {
             overlay.style.display = 'none';
-            for (var i = 0; i < mainContent.length; i++) {
-                mainContent[i].style.display = '';
+            var els = getMainElements();
+            for (var i = 0; i < els.length; i++) {
+                els[i].style.display = '';
             }
-        }
-
-        if (sessionStorage.getItem('academy_auth') === 'true') {
-            overlay.style.display = 'none';
-        } else {
-            overlay.style.display = 'flex';
-            // hideMainは DOMContentLoaded 後に実行
         }
 
         async function sha256(str) {
@@ -658,11 +656,11 @@ footer {
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            if (sessionStorage.getItem('academy_auth') !== 'true') {
-                var els = document.querySelectorAll('body > *:not(#authOverlay):not(script)');
-                for (var i = 0; i < els.length; i++) {
-                    els[i].style.display = 'none';
-                }
+            if (sessionStorage.getItem('academy_auth') === 'true') {
+                overlay.style.display = 'none';
+            } else {
+                overlay.style.display = 'flex';
+                hideMain();
             }
             document.getElementById('authSubmit').addEventListener('click', authenticate);
             document.getElementById('authPassword').addEventListener('keydown', function(e) {

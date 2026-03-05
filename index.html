@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Academy Collection</title>
+    <style>
+/* ========================================
+   CSS Variables & Base
+   ======================================== */
+:root {
+    --bg-primary: #f8fafc;
+    --bg-card: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --accent: #3b82f6;
+    --accent-light: #dbeafe;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-full: 9999px;
+    --transition: all 0.3s ease;
+}
+
+body.dark-mode {
+    --bg-primary: #0f172a;
+    --bg-card: #1e293b;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --accent: #60a5fa;
+    --accent-light: #1e3a5f;
+    --border-color: #334155;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   Reset & Base
+   ======================================== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: var(--transition);
+    overflow-x: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ========================================
+   Container
+   ======================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================
+   Header
+   ======================================== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(248, 250, 252, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+body.dark-mode header {
+    background-color: rgba(15, 23, 42, 0.8);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.icon-btn {
+    background: none;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-primary);
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    background-color: var(--accent-light);
+    border-color: var(--accent);
+}
+
+/* ========================================
+   Hero Section
+   ======================================== */
+.hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f0f9ff 50%, #ecfdf5 100%);
+    transition: var(--transition);
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 50%, #0d1f2d 100%);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+}
+
+/* Stats */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    padding: 0 16px;
+}
+
+.stat-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 16px 28px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: var(--transition);
+    min-width: 0;
+    flex: 1 1 100px;
+    max-width: 180px;
+}
+
+.stat-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.stat-num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+}
+
+/* Search */
+.search-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-full);
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-sm);
+    outline: none;
+    transition: var(--transition);
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#searchInput:focus {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md), 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+#searchInput::placeholder {
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   Filter Section
+   ======================================== */
+.filter-section {
+    padding: 20px 0;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.filter-tags {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 4px 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.filter-tags::-webkit-scrollbar {
+    height: 4px;
+}
+
+.filter-tags::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: var(--radius-full);
+}
+
+.filter-tag {
+    flex-shrink: 0;
+    padding: 10px 18px;
+    border-radius: var(--radius-full);
+    border: 1.5px solid var(--border-color);
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+    min-height: 44px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.filter-tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.filter-tag.active {
+    background-color: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+/* ========================================
+   Academy Section & Grid
+   ======================================== */
+.academy-section {
+    padding: 40px 0 60px;
+}
+
+.academy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* ========================================
+   Academy Card
+   ======================================== */
+.academy-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--accent);
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    animation: fadeInUp 0.5s ease both;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+    .academy-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+}
+
+.academy-card:active {
+    transform: scale(0.98);
+}
+
+.card-header {
+    padding: 20px 20px 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.card-header-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.card-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: var(--radius-full);
+    background-color: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 0 20px 16px;
+    flex: 1;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-footer {
+    padding: 14px 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.card-meta {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 12px;
+}
+
+.card-meta span {
+    white-space: nowrap;
+}
+
+.card-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.card-link:hover {
+    opacity: 0.8;
+}
+
+/* ========================================
+   No Results
+   ======================================== */
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+footer {
+    text-align: center;
+    padding: 24px 20px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    background-color: var(--bg-primary);
+    transition: var(--transition);
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.5s ease both;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .academy-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .stats {
+        gap: 10px;
+        padding: 0 12px;
+    }
+
+    .stat-card {
+        padding: 12px 16px;
+        flex: 1 1 80px;
+        max-width: 160px;
+    }
+
+    .stat-num {
+        font-size: 1.6rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+    }
+
+    .card-icon {
+        font-size: 2rem;
+    }
+
+    .card-title {
+        font-size: 1.05rem;
+    }
+
+    .search-wrapper {
+        padding: 0 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .academy-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .hero {
+        padding: 40px 16px 30px;
+        padding-top: max(40px, env(safe-area-inset-top));
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        padding: 0 8px;
+    }
+
+    .stats {
+        gap: 8px;
+        padding: 0 8px;
+    }
+
+    .stat-card {
+        padding: 10px 12px;
+        flex: 1 1 70px;
+    }
+
+    .stat-num {
+        font-size: 1.4rem;
+    }
+
+    .filter-section .container {
+        padding: 0 12px;
+    }
+
+    .filter-tag {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .card-header {
+        padding: 16px 16px 10px;
+    }
+
+    .card-body {
+        padding: 0 16px 14px;
+    }
+
+    .card-footer {
+        padding: 12px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .card-meta {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    footer {
+        padding-bottom: max(24px, env(safe-area-inset-bottom));
+    }
+}
+
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.3rem;
+    }
+
+    .stat-card {
+        padding: 8px 10px;
+    }
+
+    .stat-num {
+        font-size: 1.2rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-icon {
+        font-size: 1.8rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- パスワード認証オーバーレイ -->
+    <div id="authOverlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#0f172a;z-index:99999;display:flex;align-items:center;justify-content:center;">
+        <div style="background:#1e293b;border-radius:16px;padding:40px 32px;max-width:400px;width:90%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+            <div style="font-size:48px;margin-bottom:16px;">🔒</div>
+            <h2 style="color:#e2e8f0;font-size:1.4rem;margin-bottom:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">Academy Collection</h2>
+            <p style="color:#94a3b8;font-size:0.9rem;margin-bottom:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">パスワードを入力してください</p>
+            <input id="authPassword" type="password" placeholder="パスワード" autocomplete="off"
+                style="width:100%;padding:12px 16px;border:2px solid #334155;border-radius:8px;background:#0f172a;color:#e2e8f0;font-size:1rem;outline:none;margin-bottom:16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;"
+                onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#334155'">
+            <div id="authError" style="color:#f87171;font-size:0.85rem;margin-bottom:12px;display:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">パスワードが正しくありません</div>
+            <button id="authSubmit" style="width:100%;padding:12px;border:none;border-radius:8px;background:#3b82f6;color:#fff;font-size:1rem;cursor:pointer;font-weight:600;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;transition:background 0.2s;"
+                onmouseover="this.style.background='#2563eb'" onmouseout="this.style.background='#3b82f6'">ログイン</button>
+        </div>
+    </div>
+    <script>
+    (function(){
+        var HASH = 'e81f3b2738a2693705dcbf8417d48d20a2348ac3428466a0ca68ab804e26373e';
+        var overlay = document.getElementById('authOverlay');
+        var mainContent = document.querySelectorAll('body > *:not(#authOverlay):not(script)');
+
+        function hideMain() {
+            for (var i = 0; i < mainContent.length; i++) {
+                mainContent[i].style.display = 'none';
+            }
+        }
+
+        function showMain() {
+            overlay.style.display = 'none';
+            for (var i = 0; i < mainContent.length; i++) {
+                mainContent[i].style.display = '';
+            }
+        }
+
+        if (sessionStorage.getItem('academy_auth') === 'true') {
+            overlay.style.display = 'none';
+        } else {
+            overlay.style.display = 'flex';
+            // hideMainは DOMContentLoaded 後に実行
+        }
+
+        async function sha256(str) {
+            var buf = new TextEncoder().encode(str);
+            var hashBuf = await crypto.subtle.digest('SHA-256', buf);
+            var arr = Array.from(new Uint8Array(hashBuf));
+            return arr.map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+        }
+
+        async function authenticate() {
+            var pw = document.getElementById('authPassword').value;
+            var hash = await sha256(pw);
+            if (hash === HASH) {
+                sessionStorage.setItem('academy_auth', 'true');
+                showMain();
+            } else {
+                document.getElementById('authError').style.display = 'block';
+                document.getElementById('authPassword').style.borderColor = '#f87171';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            if (sessionStorage.getItem('academy_auth') !== 'true') {
+                var els = document.querySelectorAll('body > *:not(#authOverlay):not(script)');
+                for (var i = 0; i < els.length; i++) {
+                    els[i].style.display = 'none';
+                }
+            }
+            document.getElementById('authSubmit').addEventListener('click', authenticate);
+            document.getElementById('authPassword').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') authenticate();
+            });
+        });
+    })();
+    </script>
+
+    <!-- ヘッダー: ロゴ + ダークモードトグル -->
+    <header>
+        <div class="header-inner">
+            <div class="logo">🎓 Academy Collection</div>
+            <button id="darkModeToggle" class="icon-btn" title="ダークモード切替">🌙</button>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <h1>Academy Collection</h1>
+        <p class="hero-subtitle">あなたの学びを加速する、体系的な学習プラットフォーム</p>
+        <div class="stats" id="stats">
+            <!-- JS で動的生成: アカデミー数、レベル数、モジュール数 -->
+        </div>
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" placeholder="🔍 アカデミーを検索..." />
+        </div>
+    </section>
+
+    <!-- カテゴリフィルタ -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-tags" id="filterTags">
+                <!-- JS で動的生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- アカデミーグリッド -->
+    <section class="academy-section">
+        <div class="container">
+            <div class="academy-grid" id="academyGrid">
+                <!-- JS で動的生成 -->
+            </div>
+            <div class="no-results" id="noResults" style="display:none;">
+                <p>😅 該当するアカデミーが見つかりません</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <p>🎓 Academy Collection — 学び続ける、成長し続ける</p>
+        </div>
+    </footer>
+
+    <script>
+/**
+ * academies.js - アカデミー一覧データ
+ */
+const ACADEMIES = [
+  {
+    id: "boki",
+    name: "boki-academy",
+    title: "簿記3級アカデミー",
+    subtitle: "日商簿記3級を図解で完全マスター",
+    color: "#2563eb",
+    icon: "📊",
+    description: "仕訳、勘定科目、試算表、決算処理まで、日商簿記3級の全範囲を図解と演習で学びます。",
+    category: "資格・試験",
+    levels: 6,
+    modules: 24,
+    path: "../boki-academy/index.html"
+  },
+  {
+    id: "comm",
+    name: "comm-academy",
+    title: "コミュニケーションアカデミー",
+    subtitle: "人間関係を深めるコミュニケーション術",
+    color: "#e85d04",
+    icon: "🗣️",
+    description: "初対面から深い人間関係を構築するコミュニケーション術を体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 6,
+    modules: 24,
+    path: "../comm-academy/index.html"
+  },
+  {
+    id: "intimacy",
+    name: "intimacy-academy",
+    title: "インティマシーアカデミー",
+    subtitle: "親密な関係を築くスキルを学ぶ",
+    color: "#be185d",
+    icon: "💕",
+    description: "親密な関係の構築と維持に必要な知識とスキルを学びます。",
+    category: "ライフスキル",
+    levels: 6,
+    modules: 24,
+    path: "../intimacy-academy/index.html"
+  },
+  {
+    id: "eps",
+    name: "eps-academy",
+    title: "EPSアカデミー",
+    subtitle: "EPSグループとCRO業界を徹底理解",
+    color: "#1e40af",
+    icon: "🏢",
+    description: "EPSグループの全容とCRO業界の競合関係、クライアント構造を学びます。",
+    category: "企業・業界研究",
+    levels: 6,
+    modules: 24,
+    path: "../eps-academy/index.html"
+  },
+  {
+    id: "pharma-sales",
+    name: "pharma-sales-academy",
+    title: "製薬営業アカデミー",
+    subtitle: "製薬MRのための実践営業プロセス",
+    color: "#0f766e",
+    icon: "💊",
+    description: "製薬MRのための実践的な営業プロセスを基礎から戦略まで体系的に学びます。",
+    category: "営業・セールス",
+    levels: 6,
+    modules: 24,
+    path: "../pharma-sales-academy/index.html"
+  },
+  {
+    id: "sdtm",
+    name: "sdtm-academy",
+    title: "SDTMアカデミー",
+    subtitle: "臨床データ標準化のプロを目指す",
+    color: "#7c3aed",
+    icon: "📋",
+    description: "CDISC SDTMの基礎から実践まで、臨床データ標準化のプロフェッショナルを目指します。",
+    category: "専門技術",
+    levels: 6,
+    modules: 24,
+    path: "../sdtm-academy/index.html"
+  },
+  {
+    id: "stat",
+    name: "stat-academy",
+    title: "統計検定2級アカデミー",
+    subtitle: "統計検定2級を図解で完全攻略",
+    color: "#059669",
+    icon: "📈",
+    description: "確率分布、推定・検定、回帰分析など統計検定2級の全範囲を図解で学びます。",
+    category: "資格・試験",
+    levels: 6,
+    modules: 24,
+    path: "../stat-academy/index.html"
+  },
+  {
+    id: "pk",
+    name: "pk-academy",
+    title: "薬物動態アカデミー",
+    subtitle: "ADME・PKパラメータを体系的に学ぶ",
+    color: "#0891b2",
+    icon: "🧪",
+    description: "ADME（吸収・分布・代謝・排泄）の基礎からTDM、生物学的同等性試験、ポピュレーションPKまで体系的に学びます。",
+    category: "専門技術",
+    levels: 6,
+    modules: 24,
+    path: "../pk-academy/index.html"
+  },
+  {
+    id: "framework",
+    name: "framework-academy",
+    title: "フレームワークアカデミー",
+    subtitle: "世界のフレームワークを体系的にマスター",
+    color: "#2563eb",
+    icon: "🧩",
+    description: "SWOT、ポーター、PDCA、デザインシンキングからリーンスタートアップまで、ビジネス・思考・コミュニケーション・マネジメントの全フレームワークを体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 6,
+    modules: 24,
+    path: "../framework-academy/index.html"
+  },
+  {
+    id: "smalltalk",
+    name: "smalltalk-academy",
+    title: "雑談アカデミー",
+    subtitle: "雑談力を磨いて人間関係を豊かにする",
+    color: "#f97316",
+    icon: "☕",
+    description: "「何を話せばいいかわからない」を解消！天気・ニュース・趣味から、場を和ませるテクニックまで雑談力を体系的に学びます。",
+    category: "ライフスキル",
+    levels: 6,
+    modules: 24,
+    path: "../smalltalk-academy/index.html"
+  },
+  {
+    id: "nomikai",
+    name: "nomikai-academy",
+    title: "飲み会での会話アカデミー",
+    subtitle: "飲み会を最高の時間にする会話術",
+    color: "#d97706",
+    icon: "🍺",
+    description: "乾杯から二次会まで！飲み会のマナー・会話術・場の盛り上げ方・幹事力を完全マスターします。",
+    category: "ライフスキル",
+    levels: 6,
+    modules: 24,
+    path: "../nomikai-academy/index.html"
+  },
+  {
+    id: "market-size",
+    name: "market-size-academy",
+    title: "市場規模アカデミー",
+    subtitle: "日本の主要産業の市場規模とシェアを体系的に学ぶ",
+    color: "#0d9488",
+    icon: "📊",
+    description: "自動車、IT、医薬品、金融、小売など日本の主要産業の市場規模と、各業界トップ企業の市場シェアを体系的に学びます。",
+    category: "企業・業界研究",
+    levels: 6,
+    modules: 24,
+    path: "../market-size-academy/index.html"
+  },
+  {
+    id: "racehorse",
+    name: "racehorse-academy",
+    title: "競走馬の一生アカデミー",
+    subtitle: "誕生から引退後まで、競走馬のライフサイクルを完全網羅",
+    color: "#16a34a",
+    icon: "🐴",
+    description: "血統・配合から育成・調教、GIレース、健康管理、引退後のセカンドキャリアまで、競走馬の一生を体系的に学びます。",
+    category: "ライフスキル",
+    levels: 6,
+    modules: 24,
+    path: "../racehorse-academy/index.html"
+  },
+  {
+    id: "sas-graph",
+    name: "sas-graph-academy",
+    title: "SASグラフアカデミー",
+    subtitle: "100種類のSASグラフを完全マスター",
+    color: "#2563eb",
+    icon: "📉",
+    description: "PROC SGPLOT、SGPANEL、GTLを使った100種類のグラフを、SASコード付きで体系的に学びます。臨床試験グラフも網羅。",
+    category: "専門技術",
+    levels: 6,
+    modules: 24,
+    path: "../sas-graph-academy/index.html"
+  },
+  {
+    id: "ad-ops",
+    name: "ad-ops-academy",
+    title: "広告運用アカデミー",
+    subtitle: "デジタル広告運用を基礎から戦略まで完全マスター",
+    color: "#ea580c",
+    icon: "📢",
+    description: "Google Ads、Meta広告、YouTube広告からGA4分析まで、デジタル広告運用の全スキルを体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 6,
+    modules: 24,
+    path: "../ad-ops-academy/index.html"
+  },
+  {
+    id: "sns-ops",
+    name: "sns-ops-academy",
+    title: "SNS運用アカデミー",
+    subtitle: "主要SNSの運用戦略を基礎から実践まで完全マスター",
+    color: "#8b5cf6",
+    icon: "📱",
+    description: "X、Instagram、TikTok、YouTube、LINE、Facebookの運用戦略を、コンテンツ企画から分析・収益化まで体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 6,
+    modules: 24,
+    path: "../sns-ops-academy/index.html"
+  },
+  {
+    id: "creative",
+    name: "creative-academy",
+    title: "クリエイティブアカデミー",
+    subtitle: "デザイン・コピー・動画制作を基礎から実践まで完全マスター",
+    color: "#e11d48",
+    icon: "🎨",
+    description: "グラフィックデザイン、コピーライティング、動画制作、ブランディングまで、クリエイティブスキルの全領域を体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 6,
+    modules: 24,
+    path: "../creative-academy/index.html"
+  },
+  {
+    id: "mgmt-accounting",
+    name: "mgmt-accounting-academy",
+    title: "管理会計アカデミー",
+    subtitle: "経営の意思決定を数字で武装する",
+    color: "#0369a1",
+    icon: "💰",
+    description: "限界利益、損益分岐点、部門別採算、KPIツリー、NPV/IRR、ROIC経営まで、管理会計の全領域を図解で学びます。",
+    category: "経営・財務",
+    levels: 10,
+    modules: 10,
+    path: "../mgmt-accounting-academy/index.html"
+  },
+  {
+    id: "nanpa",
+    name: "nanpa-academy",
+    title: "ナンパアカデミー",
+    subtitle: "声かけから始まるコミュニケーション戦略",
+    color: "#e11d48",
+    icon: "💬",
+    description: "マインドセット、声かけの技術、会話術、連絡先交換、紳士の掟まで、初対面コミュニケーションの全スキルを学びます。",
+    category: "ライフスキル",
+    levels: 10,
+    modules: 10,
+    path: "../nanpa-academy/index.html"
+  },
+  {
+    id: "pharma-db",
+    name: "pharma-db-academy",
+    title: "商用データベース活用アカデミー",
+    subtitle: "製薬業界特化：データで勝つ経営戦略",
+    color: "#0f766e",
+    icon: "🗄️",
+    description: "IQVIA、MDV、JMDC、Cortellis、PubMed等、製薬業界の主要データベースの活用法を部門別に体系的に学びます。",
+    category: "専門技術",
+    levels: 10,
+    modules: 10,
+    path: "../pharma-db-academy/index.html"
+  },
+  {
+    id: "dumbbell",
+    name: "dumbbell-academy",
+    title: "ジムメニューアカデミー",
+    subtitle: "ダンベルトレーニング完全攻略",
+    color: "#b91c1c",
+    icon: "🏋️",
+    description: "胸・背中・肩・腕・脚・腹筋の全種目を図解付きで解説。週間プログラム、栄養管理、ケガ予防まで網羅します。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 12,
+    path: "../dumbbell-academy/index.html"
+  },
+  {
+    id: "social-structure",
+    name: "social-structure-academy",
+    title: "社会構造アカデミー",
+    subtitle: "世の中の「見えないルール」を読み解く",
+    color: "#6d28d9",
+    icon: "🌐",
+    description: "階層と格差、資本の4形態、権力構造、資本主義、ジェンダー、メディア、世界システムまで、社会の構造を多角的に学びます。",
+    category: "教養・社会",
+    levels: 12,
+    modules: 12,
+    path: "../social-structure-academy/index.html"
+  },
+  {
+    id: "facilitator",
+    name: "facilitator-academy",
+    title: "ファシリテーターアカデミー",
+    subtitle: "会議を「成果が出る場」に変える技術",
+    color: "#0284c7",
+    icon: "🎯",
+    description: "場のデザイン、引き出す技術、構造化、合意形成、オンラインファシリまで、ファシリテーションの全スキルを学びます。",
+    category: "ビジネススキル",
+    levels: 12,
+    modules: 12,
+    path: "../facilitator-academy/index.html"
+  },
+  {
+    id: "ai-fundamentals",
+    name: "ai-academy",
+    title: "AIアカデミー",
+    subtitle: "人工知能の本質を理解し、ビジネスに活かす",
+    color: "#4f46e5",
+    icon: "🤖",
+    description: "機械学習、深層学習、LLM、プロンプトエンジニアリング、AIエージェント、倫理まで、AI技術の全体像を体系的に学びます。",
+    category: "テクノロジー",
+    levels: 11,
+    modules: 11,
+    path: "../ai-academy/index.html"
+  },
+  {
+    id: "ai-tools",
+    name: "ai-tools-academy",
+    title: "AI別特徴・活用例アカデミー",
+    subtitle: "主要AIサービス完全ガイド 2026年版",
+    color: "#7c3aed",
+    icon: "🛠️",
+    description: "ChatGPT、Claude、Gemini、Midjourney、Stable Diffusion等15以上のAIサービスを比較。料金、活用例、選定フローを網羅します。",
+    category: "テクノロジー",
+    levels: 12,
+    modules: 15,
+    path: "../ai-tools-academy/index.html"
+  },
+  {
+    id: "company-setup",
+    name: "company-setup-academy",
+    title: "会社設立アカデミー",
+    subtitle: "構想から登記、届出まで完全ガイド",
+    color: "#15803d",
+    icon: "🏛️",
+    description: "株式会社vs合同会社の比較から、定款作成、登記、届出、法人口座開設、社会保険まで、会社設立の全ステップを学びます。",
+    category: "起業・経営",
+    levels: 15,
+    modules: 15,
+    path: "../company-setup-academy/index.html"
+  },
+  {
+    id: "subsidy",
+    name: "subsidy-academy",
+    title: "補助金アカデミー",
+    subtitle: "中小企業・個人事業主のための完全攻略ガイド",
+    color: "#ca8a04",
+    icon: "💴",
+    description: "ものづくり補助金、IT導入補助金、事業再構築補助金等の主要補助金を網羅。採択される事業計画書の書き方まで学びます。",
+    category: "起業・経営",
+    levels: 12,
+    modules: 12,
+    path: "../subsidy-academy/index.html"
+  },
+  {
+    id: "bank-loan",
+    name: "bank-loan-academy",
+    title: "銀行融資アカデミー",
+    subtitle: "中小企業・起業家のための完全ガイド",
+    color: "#1d4ed8",
+    icon: "🏦",
+    description: "融資の種類、審査基準、格付け、決算書の見られ方、金利交渉、創業融資まで、銀行からお金を借りるための全知識を学びます。",
+    category: "起業・経営",
+    levels: 13,
+    modules: 13,
+    path: "../bank-loan-academy/index.html"
+  },
+  {
+    id: "sdrg",
+    name: "sdrg-academy",
+    title: "SDRGアカデミー",
+    subtitle: "Study Data Reviewer's Guide 完全攻略",
+    color: "#4338ca",
+    icon: "📑",
+    description: "SDRGの構成要素、各セクションの書き方、Pinnacle 21対応、Define.xmlとの関係、PMDA提出の留意点まで体系的に学びます。",
+    category: "専門技術",
+    levels: 12,
+    modules: 12,
+    path: "../sdrg-academy/index.html"
+  },
+  {
+    id: "adrg",
+    name: "adrg-academy",
+    title: "ADRGアカデミー",
+    subtitle: "Analysis Data Reviewer's Guide 完全攻略",
+    color: "#0e7490",
+    icon: "📄",
+    description: "ADRGの構成、ADaMデータセットの説明方法、導出ロジックの記載、SDTMからのトレーサビリティ、PMDA対応まで体系的に学びます。",
+    category: "専門技術",
+    levels: 12,
+    modules: 12,
+    path: "../adrg-academy/index.html"
+  },
+  {
+    id: "sdtm-spec",
+    name: "sdtm-spec-academy",
+    title: "SDTM仕様書作成アカデミー",
+    subtitle: "CRFからSDTMへのマッピング設計を極める",
+    color: "#6d28d9",
+    icon: "📝",
+    description: "Annotated CRF、変数定義、マッピングロジック、SUPP、Controlled Terminology、Define.xml、Pinnacle 21対応まで網羅します。",
+    category: "専門技術",
+    levels: 12,
+    modules: 12,
+    path: "../sdtm-spec-academy/index.html"
+  },
+  {
+    id: "sdtm-automation",
+    name: "sdtm-automation-academy",
+    title: "SDTM Automationアカデミー",
+    subtitle: "メタデータ駆動型でSDTM変換を自動化する",
+    color: "#0f172a",
+    icon: "⚙️",
+    description: "CDISC Library、ODM、Dataset-JSON、商用ツール、SAS/R/Python実装、CI/CD、End-to-Endワークフローまで体系的に学びます。",
+    category: "専門技術",
+    levels: 12,
+    modules: 12,
+    path: "../sdtm-automation-academy/index.html"
+  },
+  {
+    id: "customer-analysis",
+    name: "customer-analysis-academy",
+    title: "顧客分析アカデミー",
+    subtitle: "営業の「なぜ売れた」「なぜ失注した」を科学する",
+    color: "#dc2626",
+    icon: "🔍",
+    description: "受注分析、失注原因調査、競合分析、LTV分析、離脱予兆分析、パイプライン分析まで、営業のデータドリブン化を体系的に学びます。",
+    category: "営業・セールス",
+    levels: 12,
+    modules: 12,
+    path: "../customer-analysis-academy/index.html"
+  },
+  {
+    id: "csv",
+    name: "csv-academy",
+    title: "CSVアカデミー",
+    subtitle: "コンピュータシステムバリデーションを体系的に学ぶ",
+    color: "#0284c7",
+    icon: "📚",
+    description: "GxP環境におけるCSVの基礎からGAMP 5、データインテグリティ、バリデーション計画・文書作成まで体系的に学びます。",
+    category: "専門技術",
+    levels: 6,
+    modules: 24,
+    path: "../csv-academy/index.html"
+  },
+  {
+    id: "recruitment",
+    name: "recruitment-academy",
+    title: "採用アカデミー",
+    subtitle: "企業の採用活動を基礎から実践まで完全マスター",
+    color: "#059669",
+    icon: "📋",
+    description: "採用戦略、母集団形成、採用ブランディング、面接・候補者体験、新卒採用、KPI管理、法務まで体系的に学びます。",
+    category: "人事・HR",
+    levels: 6,
+    modules: 20,
+    path: "../recruitment-academy/index.html"
+  },
+  {
+    id: "retention",
+    name: "retention-academy",
+    title: "離職防止アカデミー",
+    subtitle: "従業員リテンションの科学と実践",
+    color: "#b91c1c",
+    icon: "📉",
+    description: "離職の基礎理解、現状把握、環境整備、定着施策、シグナル検知、分析と戦略統合まで、リテンション施策を体系的に学びます。",
+    category: "人事・HR",
+    levels: 6,
+    modules: 20,
+    path: "../retention-academy/index.html"
+  },
+  {
+    id: "gakureki",
+    name: "gakureki-academy",
+    title: "学歴アカデミー",
+    subtitle: "偏差値×就職力で大学の本当の価値を可視化",
+    color: "#1a365d",
+    icon: "🎓",
+    description: "大学偏差値ランキング、大学群比較、学歴フィルターの実態、業界別採用ボーダーまで、学歴と就職の関係を体系的に学びます。",
+    category: "教養・社会",
+    levels: 5,
+    modules: 9,
+    path: "../gakureki-academy/index.html"
+  },
+  {
+    id: "genka",
+    name: "genka-academy",
+    title: "原価計算アカデミー",
+    subtitle: "CROの人月工数・原価率・チャージレートを体系的に学ぶ",
+    color: "#0d7377",
+    icon: "🧮",
+    description: "CRO（開発業務受託機関）の原価計算を職種別単価ランキング、試験フェーズ別コスト、原価計算シミュレーターで実践的に学びます。",
+    category: "経営・財務",
+    levels: 5,
+    modules: 8,
+    path: "../genka-academy/index.html"
+  },
+  {
+    id: "adam",
+    name: "adam-academy",
+    title: "ADaM仕様書アカデミー",
+    subtitle: "完全素人から仕様書が書けるADaMの教科書",
+    color: "#1e3a5f",
+    icon: "📋",
+    description: "CDISC ADaM標準に基づく解析データセット仕様書の作成方法を、変数辞書・作成ガイド・仕様書ビルダーでステップバイステップに学びます。",
+    category: "専門技術",
+    levels: 6,
+    modules: 7,
+    path: "../adam-academy/index.html"
+  },
+  {
+    id: "tlf",
+    name: "tlf-academy",
+    title: "TLFアカデミー",
+    subtitle: "臨床試験のTables, Listings, Figuresを完全マスター",
+    color: "#1e6f5c",
+    icon: "📊",
+    description: "臨床試験のTLF（Tables, Listings, Figures）を基礎からプロレベルまで体系的に学びます。SAS/Rプログラミング、品質管理、規制要件まで網羅。",
+    category: "専門技術",
+    levels: 13,
+    modules: 52,
+    path: "../tlf-academy/index.html"
+  },
+  {
+    id: "ds",
+    name: "ds-academy",
+    title: "データサイエンスアカデミー",
+    subtitle: "Python・統計・機械学習を基礎から実践まで完全マスター",
+    color: "#6366f1",
+    icon: "🔬",
+    description: "データサイエンスの基礎概念からPython・SQL・統計・機械学習・特徴量エンジニアリングまで、実務で使えるスキルを体系的に学びます。",
+    category: "テクノロジー",
+    levels: 13,
+    modules: 52,
+    path: "../ds-academy/index.html"
+  },
+  {
+    id: "osake",
+    name: "osake-academy",
+    title: "お酒の知識アカデミー",
+    subtitle: "日本酒・ビール・ワイン・ウイスキー・焼酎・カクテルを体系的に学ぶ",
+    color: "#b45309",
+    icon: "🍶",
+    description: "お酒の基礎知識から各ジャンルの深い知識、テイスティング、フードペアリング、マナーまで、お酒の世界を横断的に学べるプラットフォーム。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 48,
+    path: "../osake-academy/index.html"
+  },
+  {
+    id: "neko",
+    name: "neko-academy",
+    title: "猫の育て方アカデミー",
+    subtitle: "猫を迎える準備から健康管理・行動理解・しつけまで完全網羅",
+    color: "#ea580c",
+    icon: "🐱",
+    description: "猫の飼育に必要な知識を初心者からベテランまで体系的に学べるプラットフォーム。食事・健康・行動・しつけ・多頭飼い・シニアケアまで網羅。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 48,
+    path: "../neko-academy/index.html"
+  },
+  {
+    id: "invest",
+    name: "invest-academy",
+    title: "投資・資産運用アカデミー",
+    subtitle: "NISA・iDeCo・株・債券で資産形成を始める",
+    color: "#16a34a",
+    icon: "💹",
+    description: "NISA、iDeCo、株式投資、債券、投資信託、ポートフォリオ理論から出口戦略まで、個人の資産形成に必要な知識を体系的に学びます。",
+    category: "経営・財務",
+    levels: 12,
+    modules: 12,
+    path: "../invest-academy/index.html"
+  },
+  {
+    id: "cooking",
+    name: "cooking-academy",
+    title: "料理アカデミー",
+    subtitle: "包丁の持ち方から献立設計まで完全マスター",
+    color: "#ea580c",
+    icon: "🍳",
+    description: "基本の切り方・火加減・味付けから、和洋中の定番レシピ、栄養バランス、作り置き、献立設計まで料理スキルを体系的に学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 12,
+    path: "../cooking-academy/index.html"
+  },
+  {
+    id: "english",
+    name: "english-academy",
+    title: "英語アカデミー",
+    subtitle: "TOEIC対策からビジネス英語まで完全攻略",
+    color: "#2563eb",
+    icon: "🇬🇧",
+    description: "文法基礎、リスニング、リーディング、TOEIC対策、ビジネス英語、プレゼン英語、英文メールまで実践的な英語力を体系的に学びます。",
+    category: "資格・試験",
+    levels: 12,
+    modules: 12,
+    path: "../english-academy/index.html"
+  },
+  {
+    id: "programming",
+    name: "programming-academy",
+    title: "プログラミングアカデミー",
+    subtitle: "ゼロからWebアプリが作れるようになる",
+    color: "#6366f1",
+    icon: "💻",
+    description: "HTML/CSS/JavaScriptの基礎からPython、Git、API連携、データベース、Webアプリ開発まで、プログラミングの全体像を体系的に学びます。",
+    category: "テクノロジー",
+    levels: 12,
+    modules: 12,
+    path: "../programming-academy/index.html"
+  },
+  {
+    id: "negotiation",
+    name: "negotiation-academy",
+    title: "交渉術アカデミー",
+    subtitle: "ハーバード流交渉術からWin-Win戦略まで",
+    color: "#dc2626",
+    icon: "🤝",
+    description: "BATNA、ZOPA、アンカリング、ハーバード流交渉術、感情コントロール、クロスカルチャー交渉まで、交渉スキルを体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 12,
+    modules: 12,
+    path: "../negotiation-academy/index.html"
+  },
+  {
+    id: "psychology",
+    name: "psychology-academy",
+    title: "心理学アカデミー",
+    subtitle: "認知バイアスから対人心理まで人間の心を読み解く",
+    color: "#9333ea",
+    icon: "🧠",
+    description: "認知心理学、行動経済学、社会心理学、発達心理学、認知バイアス、説得の心理学まで、実生活に活かせる心理学を体系的に学びます。",
+    category: "教養・社会",
+    levels: 12,
+    modules: 12,
+    path: "../psychology-academy/index.html"
+  },
+  {
+    id: "sleep",
+    name: "sleep-academy",
+    title: "睡眠アカデミー",
+    subtitle: "睡眠の科学と最高の眠りを手に入れる技術",
+    color: "#1e40af",
+    icon: "😴",
+    description: "睡眠のメカニズム、サーカディアンリズム、睡眠ステージ、快眠テクニック、睡眠障害、昼寝の科学まで、睡眠を体系的に学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 12,
+    path: "../sleep-academy/index.html"
+  },
+  {
+    id: "tax",
+    name: "tax-academy",
+    title: "節税アカデミー",
+    subtitle: "個人・法人の合法的な節税スキームを完全網羅",
+    color: "#ca8a04",
+    icon: "🧾",
+    description: "確定申告、青色申告、経費計上、法人税、消費税、役員報酬設計、小規模企業共済、ふるさと納税まで、節税の全知識を体系的に学びます。",
+    category: "起業・経営",
+    levels: 12,
+    modules: 12,
+    path: "../tax-academy/index.html"
+  },
+  {
+    id: "presentation",
+    name: "presentation-academy",
+    title: "プレゼンアカデミー",
+    subtitle: "伝わるスライド設計と話し方の技術",
+    color: "#0891b2",
+    icon: "🎤",
+    description: "ストーリー構成、スライドデザイン、データ可視化、話し方・声の使い方、質疑応答、オンラインプレゼンまで、プレゼン力を体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 12,
+    modules: 12,
+    path: "../presentation-academy/index.html"
+  },
+  {
+    id: "realestate",
+    name: "realestate-academy",
+    title: "不動産投資アカデミー",
+    subtitle: "物件選定から融資・管理運営まで完全ガイド",
+    color: "#15803d",
+    icon: "🏠",
+    description: "不動産投資の基礎、利回り計算、物件調査、融資戦略、税務、管理運営、出口戦略まで、不動産投資の全プロセスを体系的に学びます。",
+    category: "経営・財務",
+    levels: 12,
+    modules: 12,
+    path: "../realestate-academy/index.html"
+  },
+  {
+    id: "wine",
+    name: "wine-academy",
+    title: "ワインアカデミー",
+    subtitle: "品種・産地・テイスティングからペアリングまで",
+    color: "#7f1d1d",
+    icon: "🍷",
+    description: "ブドウ品種、主要産地、テイスティング技法、フードペアリング、ワインの選び方まで、ワインの世界を体系的に学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 12,
+    path: "../wine-academy/index.html"
+  },
+  {
+    id: "marketing",
+    name: "marketing-academy",
+    title: "マーケティングアカデミー",
+    subtitle: "4P・STP・ブランディングを基礎から実践まで",
+    color: "#c026d3",
+    icon: "📣",
+    description: "マーケティングの基本フレームワーク、市場分析、STP、4P、ブランド戦略、CRM、デジタルマーケティングまで体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 12,
+    modules: 12,
+    path: "../marketing-academy/index.html"
+  },
+  {
+    id: "leadership",
+    name: "leadership-academy",
+    title: "リーダーシップアカデミー",
+    subtitle: "チームを動かすマネジメントの技術",
+    color: "#0f766e",
+    icon: "👑",
+    description: "リーダーシップ理論、1on1、チームビルディング、権限委譲、コンフリクト管理、組織文化醸成まで体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 12,
+    modules: 12,
+    path: "../leadership-academy/index.html"
+  },
+  {
+    id: "philosophy",
+    name: "philosophy-academy",
+    title: "哲学アカデミー",
+    subtitle: "ソクラテスからサンデルまで思考の土台を築く",
+    color: "#4338ca",
+    icon: "🏛️",
+    description: "古代ギリシャ哲学、近代哲学、実存主義、功利主義、正義論、東洋思想まで、哲学の主要テーマを体系的に学びます。",
+    category: "教養・社会",
+    levels: 12,
+    modules: 12,
+    path: "../philosophy-academy/index.html"
+  },
+  {
+    id: "diet",
+    name: "diet-academy",
+    title: "ダイエット・栄養学アカデミー",
+    subtitle: "科学的根拠に基づく食事管理と体づくり",
+    color: "#16a34a",
+    icon: "🥗",
+    description: "カロリー収支、PFCバランス、基礎代謝、食事タイミング、サプリメント、リバウンド防止まで科学的に学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 12,
+    path: "../diet-academy/index.html"
+  },
+  {
+    id: "coffee",
+    name: "coffee-academy",
+    title: "コーヒーアカデミー",
+    subtitle: "豆の選び方から抽出・焙煎まで完全マスター",
+    color: "#78350f",
+    icon: "☕",
+    description: "コーヒー豆の品種・産地、焙煎度合い、ドリップ・エスプレッソ等の抽出方法、カッピング、ラテアートまで体系的に学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 12,
+    path: "../coffee-academy/index.html"
+  },
+  {
+    id: "fp",
+    name: "fp-academy",
+    title: "FP3級アカデミー",
+    subtitle: "ファイナンシャルプランナー3級を完全攻略",
+    color: "#b45309",
+    icon: "📝",
+    description: "ライフプランニング、リスク管理、金融資産運用、タックスプランニング、不動産、相続・事業承継の全6分野を体系的に学びます。",
+    category: "資格・試験",
+    levels: 12,
+    modules: 12,
+    path: "../fp-academy/index.html"
+  },
+  {
+    id: "legal",
+    name: "legal-academy",
+    title: "契約書・法務基礎アカデミー",
+    subtitle: "ビジネスに必須の法務知識を身につける",
+    color: "#1e3a5f",
+    icon: "⚖️",
+    description: "契約書の読み方、NDA、業務委託契約、労働法、知的財産権、個人情報保護法、紛争解決まで法務基礎を体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 12,
+    modules: 12,
+    path: "../legal-academy/index.html"
+  },
+  {
+    id: "photo",
+    name: "photo-academy",
+    title: "写真・カメラアカデミー",
+    subtitle: "露出・構図・レタッチでワンランク上の写真を",
+    color: "#be185d",
+    icon: "📷",
+    description: "カメラの基礎、露出の三角形、構図の法則、光の使い方、レタッチ、スマホ撮影術、ポートレート・風景撮影まで体系的に学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 12,
+    path: "../photo-academy/index.html"
+  },
+  {
+    id: "logical",
+    name: "logical-academy",
+    title: "ロジカルシンキングアカデミー",
+    subtitle: "MECE・ロジックツリーで問題解決力を磨く",
+    color: "#0369a1",
+    icon: "🧩",
+    description: "MECE、ロジックツリー、ピラミッド構造、仮説思考、フェルミ推定、イシュー分析まで論理的思考力を体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 12,
+    modules: 12,
+    path: "../logical-academy/index.html"
+  },
+  {
+    id: "shionogi",
+    name: "shionogi-academy",
+    title: "塩野義製薬アカデミー",
+    subtitle: "感染症のパイオニア、塩野義製薬を徹底解剖",
+    color: "#1e40af",
+    icon: "💊",
+    description: "塩野義製薬の沿革、感染症領域の強み、ゾコーバ、パイプライン、財務分析、経営戦略からキャリア情報まで体系的に学びます。",
+    category: "企業・業界研究",
+    levels: 12,
+    modules: 12,
+    path: "../shionogi-academy/index.html"
+  },
+  {
+    id: "bayer",
+    name: "bayer-academy",
+    title: "バイエルアカデミー",
+    subtitle: "医薬品・農薬・消費者向けのグローバル巨人を徹底解剖",
+    color: "#0891b2",
+    icon: "🏭",
+    description: "バイエルの3事業部門、グローバル戦略、主力製品、モンサント買収、財務分析、キャリア情報まで体系的に学びます。",
+    category: "企業・業界研究",
+    levels: 12,
+    modules: 12,
+    path: "../bayer-academy/index.html"
+  },
+  {
+    id: "otsuka",
+    name: "otsuka-academy",
+    title: "大塚製薬アカデミー",
+    subtitle: "エビリファイからポカリまで、独自路線の製薬企業を解剖",
+    color: "#0f766e",
+    icon: "🧪",
+    description: "大塚製薬の医療用医薬品・ニュートラシューティカルズ戦略、エビリファイ、ポカリスエット、財務分析からキャリア情報まで学びます。",
+    category: "企業・業界研究",
+    levels: 12,
+    modules: 12,
+    path: "../otsuka-academy/index.html"
+  },
+  {
+    id: "senju",
+    name: "senju-academy",
+    title: "千寿製薬アカデミー",
+    subtitle: "眼科領域特化のニッチトップ企業を徹底解剖",
+    color: "#7c3aed",
+    icon: "👁️",
+    description: "千寿製薬の眼科領域特化戦略、主力点眼薬、研究開発、ニッチ戦略の強み、財務分析からキャリア情報まで体系的に学びます。",
+    category: "企業・業界研究",
+    levels: 12,
+    modules: 12,
+    path: "../senju-academy/index.html"
+  },
+  {
+    id: "ono",
+    name: "ono-academy",
+    title: "小野薬品アカデミー",
+    subtitle: "オプジーボで世界を変えた創薬企業を徹底解剖",
+    color: "#dc2626",
+    icon: "🔬",
+    description: "小野薬品の創薬力、オプジーボ、免疫チェックポイント阻害剤、本庶佑教授との関係、財務分析からキャリア情報まで学びます。",
+    category: "企業・業界研究",
+    levels: 12,
+    modules: 12,
+    path: "../ono-academy/index.html"
+  },
+  {
+    id: "snbl",
+    name: "snbl-academy",
+    title: "新日本科学アカデミー",
+    subtitle: "非臨床CROのリーディングカンパニーを徹底解剖",
+    color: "#15803d",
+    icon: "🐒",
+    description: "新日本科学の非臨床試験、霊長類試験、トランスレーショナルリサーチ、CRO業界での位置づけ、財務分析からキャリア情報まで学びます。",
+    category: "企業・業界研究",
+    levels: 12,
+    modules: 12,
+    path: "../snbl-academy/index.html"
+  },
+  {
+    id: "ppd",
+    name: "ppd-academy",
+    title: "PPDアカデミー",
+    subtitle: "Thermo Fisher傘下のグローバルCROを徹底解剖",
+    color: "#b45309",
+    icon: "🌍",
+    description: "PPDのグローバルCRO事業、Thermo Fisher買収、臨床試験運営、ラボサービス、財務分析からキャリア情報まで体系的に学びます。",
+    category: "企業・業界研究",
+    levels: 12,
+    modules: 12,
+    path: "../ppd-academy/index.html"
+  }
+];
+
+const CATEGORIES = ["すべて", "資格・試験", "ビジネススキル", "ライフスキル", "企業・業界研究", "営業・セールス", "専門技術", "経営・財務", "教養・社会", "テクノロジー", "起業・経営", "人事・HR"];
+
+/**
+ * app.js - アプリケーションロジック
+ */
+const App = {
+    currentCategory: "すべて",
+    searchQuery: "",
+
+    init() {
+        this.renderStats();
+        this.renderFilters();
+        this.renderAcademies();
+        this.setupEventListeners();
+        this.loadDarkMode();
+    },
+
+    renderStats() {
+        const totalAcademies = ACADEMIES.length;
+        const totalLevels = ACADEMIES.reduce((sum, a) => sum + a.levels, 0);
+        const totalModules = ACADEMIES.reduce((sum, a) => sum + a.modules, 0);
+
+        document.getElementById('stats').innerHTML = `
+            <div class="stat-card"><div class="stat-num">${totalAcademies}</div><div class="stat-label">アカデミー</div></div>
+            <div class="stat-card"><div class="stat-num">${totalLevels}</div><div class="stat-label">レベル</div></div>
+            <div class="stat-card"><div class="stat-num">${totalModules}</div><div class="stat-label">モジュール</div></div>
+        `;
+    },
+
+    renderFilters() {
+        const container = document.getElementById('filterTags');
+        container.innerHTML = CATEGORIES.map(cat =>
+            `<button class="filter-tag ${cat === this.currentCategory ? 'active' : ''}"
+                     onclick="App.filterByCategory('${cat}')">${cat}</button>`
+        ).join('');
+    },
+
+    renderAcademies() {
+        const filtered = ACADEMIES.filter(a => {
+            const matchCategory = this.currentCategory === "すべて" || a.category === this.currentCategory;
+            const matchSearch = this.searchQuery === "" ||
+                a.title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                a.description.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                a.category.toLowerCase().includes(this.searchQuery.toLowerCase());
+            return matchCategory && matchSearch;
+        });
+
+        const grid = document.getElementById('academyGrid');
+        const noResults = document.getElementById('noResults');
+
+        if (filtered.length === 0) {
+            grid.innerHTML = '';
+            noResults.style.display = 'block';
+            return;
+        }
+        noResults.style.display = 'none';
+
+        grid.innerHTML = filtered.map((academy, index) => `
+            <a href="${academy.path}" class="academy-card fade-in" style="border-left-color: ${academy.color}; animation-delay: ${index * 0.08}s;">
+                <div class="card-header">
+                    <span class="card-icon">${academy.icon}</span>
+                    <div>
+                        <h3 class="card-title">${academy.title}</h3>
+                        <span class="card-badge" style="background: ${academy.color}20; color: ${academy.color}">${academy.category}</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>${academy.description}</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-meta">
+                        <span>📚 ${academy.levels} レベル</span>
+                        <span>📝 ${academy.modules} モジュール</span>
+                    </div>
+                    <span class="card-link" style="color: ${academy.color}">学習を始める →</span>
+                </div>
+            </a>
+        `).join('');
+    },
+
+    filterByCategory(category) {
+        this.currentCategory = category;
+        this.renderFilters();
+        this.renderAcademies();
+    },
+
+    setupEventListeners() {
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            this.searchQuery = e.target.value;
+            this.renderAcademies();
+        });
+
+        document.getElementById('darkModeToggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('academy-index-dark', isDark);
+            document.getElementById('darkModeToggle').textContent = isDark ? '☀️' : '🌙';
+        });
+    },
+
+    loadDarkMode() {
+        if (localStorage.getItem('academy-index-dark') === 'true') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('darkModeToggle').textContent = '☀️';
+        }
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => App.init());
+    </script>
+</body>
+</html>

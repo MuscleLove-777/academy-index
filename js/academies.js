@@ -239,7 +239,7 @@ const ACADEMIES = [
     category: "経営・財務",
     levels: 10,
     modules: 10,
-    path: "../Desktop/管理会計アカデミー.md"
+    path: "https://musclelove-777.github.io/mgmt-accounting-academy/"
   },
   {
     id: "nanpa",
@@ -252,7 +252,7 @@ const ACADEMIES = [
     category: "ライフスキル",
     levels: 10,
     modules: 10,
-    path: "../Desktop/ナンパアカデミー.md"
+    path: "https://musclelove-777.github.io/nanpa-academy/"
   },
   {
     id: "pharma-db",
@@ -265,7 +265,7 @@ const ACADEMIES = [
     category: "専門技術",
     levels: 10,
     modules: 10,
-    path: "../Desktop/商用データベース活用アカデミー_製薬業界特化.md"
+    path: "https://musclelove-777.github.io/pharma-db-academy/"
   },
   {
     id: "dumbbell",
@@ -278,7 +278,7 @@ const ACADEMIES = [
     category: "ライフスキル",
     levels: 12,
     modules: 12,
-    path: "../Desktop/ジムメニューアカデミー_ダンベルトレーニング.md"
+    path: "https://musclelove-777.github.io/dumbbell-academy/"
   },
   {
     id: "social-structure",
@@ -291,7 +291,7 @@ const ACADEMIES = [
     category: "教養・社会",
     levels: 12,
     modules: 12,
-    path: "../Desktop/社会構造アカデミー.md"
+    path: "https://musclelove-777.github.io/social-structure-academy/"
   },
   {
     id: "facilitator",
@@ -304,7 +304,7 @@ const ACADEMIES = [
     category: "ビジネススキル",
     levels: 12,
     modules: 12,
-    path: "../Desktop/ファシリテーターアカデミー.md"
+    path: "https://musclelove-777.github.io/facilitator-academy/"
   },
   {
     id: "ai-fundamentals",
@@ -317,7 +317,7 @@ const ACADEMIES = [
     category: "テクノロジー",
     levels: 11,
     modules: 11,
-    path: "../Desktop/AIアカデミー.md"
+    path: "https://musclelove-777.github.io/ai-academy/"
   },
   {
     id: "ai-tools",
@@ -330,7 +330,7 @@ const ACADEMIES = [
     category: "テクノロジー",
     levels: 12,
     modules: 15,
-    path: "../Desktop/AI別特徴・活用例アカデミー.md"
+    path: "https://musclelove-777.github.io/ai-tools-academy/"
   },
   {
     id: "company-setup",
@@ -343,7 +343,7 @@ const ACADEMIES = [
     category: "起業・経営",
     levels: 15,
     modules: 15,
-    path: "../Desktop/会社設立アカデミー.md"
+    path: "https://musclelove-777.github.io/company-setup-academy/"
   },
   {
     id: "subsidy",
@@ -356,7 +356,7 @@ const ACADEMIES = [
     category: "起業・経営",
     levels: 12,
     modules: 12,
-    path: "../Desktop/補助金アカデミー.md"
+    path: "https://musclelove-777.github.io/subsidy-academy/"
   },
   {
     id: "bank-loan",
@@ -369,7 +369,7 @@ const ACADEMIES = [
     category: "起業・経営",
     levels: 13,
     modules: 13,
-    path: "../Desktop/銀行融資アカデミー.md"
+    path: "https://musclelove-777.github.io/bank-loan-academy/"
   },
   {
     id: "sdrg",
@@ -382,7 +382,7 @@ const ACADEMIES = [
     category: "専門技術",
     levels: 12,
     modules: 12,
-    path: "../Desktop/SDRGアカデミー.md"
+    path: "https://musclelove-777.github.io/sdrg-academy/"
   },
   {
     id: "adrg",
@@ -395,7 +395,7 @@ const ACADEMIES = [
     category: "専門技術",
     levels: 12,
     modules: 12,
-    path: "../Desktop/ADRGアカデミー.md"
+    path: "https://musclelove-777.github.io/adrg-academy/"
   },
   {
     id: "sdtm-spec",
@@ -408,7 +408,7 @@ const ACADEMIES = [
     category: "専門技術",
     levels: 12,
     modules: 12,
-    path: "../Desktop/SDTM仕様書作成アカデミー.md"
+    path: "https://musclelove-777.github.io/sdtm-spec-academy/"
   },
   {
     id: "sdtm-automation",
@@ -421,7 +421,7 @@ const ACADEMIES = [
     category: "専門技術",
     levels: 12,
     modules: 12,
-    path: "../Desktop/SDTM_Automationアカデミー.md"
+    path: "https://musclelove-777.github.io/sdtm-automation-academy/"
   },
   {
     id: "customer-analysis",
@@ -434,7 +434,7 @@ const ACADEMIES = [
     category: "営業・セールス",
     levels: 12,
     modules: 12,
-    path: "../Desktop/顧客分析アカデミー.md"
+    path: "https://musclelove-777.github.io/customer-analysis-academy/"
   },
   {
     id: "osake",
@@ -461,6 +461,539 @@ const ACADEMIES = [
     levels: 12,
     modules: 48,
     path: "https://musclelove-777.github.io/neko-academy/"
+  },
+  {
+    id: "adam",
+    name: "adam-academy",
+    title: "ADaM仕様書アカデミー",
+    subtitle: "ADaM仕様書の作成を体系的に学ぶ",
+    color: "#4338ca",
+    icon: "📋",
+    description: "ADaMデータセットの設計、仕様書作成、BDS/ADSL構造、導出ロジック、CDISC準拠まで体系的に学びます。",
+    category: "専門技術",
+    levels: 6,
+    modules: 24,
+    path: "https://musclelove-777.github.io/adam-academy/"
+  },
+  {
+    id: "coffee",
+    name: "coffee-academy",
+    title: "コーヒーアカデミー",
+    subtitle: "コーヒーの世界を基礎から極める",
+    color: "#78350f",
+    icon: "☕",
+    description: "豆の種類、焙煎、抽出方法、ラテアート、カッピングまで、コーヒーの知識を体系的に学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/coffee-academy/"
+  },
+  {
+    id: "cooking",
+    name: "cooking-academy",
+    title: "料理アカデミー",
+    subtitle: "基本の調理技術から応用まで完全マスター",
+    color: "#dc2626",
+    icon: "🍳",
+    description: "包丁の使い方、火加減、味付けの基本から和洋中の本格レシピまで、料理スキルを体系的に学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/cooking-academy/"
+  },
+  {
+    id: "csv",
+    name: "csv-academy",
+    title: "CSVアカデミー",
+    subtitle: "コンピュータシステムバリデーションを完全攻略",
+    color: "#0369a1",
+    icon: "💻",
+    description: "CSV（コンピュータシステムバリデーション）の基礎からGAMP5、リスクベースアプローチ、規制対応まで体系的に学びます。",
+    category: "専門技術",
+    levels: 6,
+    modules: 24,
+    path: "https://musclelove-777.github.io/csv-academy/"
+  },
+  {
+    id: "definexml",
+    name: "definexml-academy",
+    title: "Define.xmlアカデミー",
+    subtitle: "Define.xmlの作成と仕様を完全マスター",
+    color: "#7c3aed",
+    icon: "📄",
+    description: "Define.xmlの構造、メタデータ定義、CDISC準拠、ツール活用まで体系的に学びます。",
+    category: "専門技術",
+    levels: 6,
+    modules: 24,
+    path: "https://musclelove-777.github.io/definexml-academy/"
+  },
+  {
+    id: "diet",
+    name: "diet-academy",
+    title: "ダイエット・栄養学アカデミー",
+    subtitle: "科学的なダイエットと栄養管理を学ぶ",
+    color: "#16a34a",
+    icon: "🥗",
+    description: "カロリー管理、PFCバランス、食事タイミング、サプリメント活用まで、科学的なダイエットを体系的に学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/diet-academy/"
+  },
+  {
+    id: "ds",
+    name: "ds-academy",
+    title: "データサイエンスアカデミー",
+    subtitle: "データサイエンスの全領域を体系的に学ぶ",
+    color: "#2563eb",
+    icon: "🔬",
+    description: "統計学、機械学習、Python/R、データ可視化、ビッグデータ分析まで、データサイエンスの全スキルを学びます。",
+    category: "テクノロジー",
+    levels: 13,
+    modules: 52,
+    path: "https://musclelove-777.github.io/ds-academy/"
+  },
+  {
+    id: "english",
+    name: "english-academy",
+    title: "英語アカデミー",
+    subtitle: "実践的な英語力を基礎から鍛える",
+    color: "#1d4ed8",
+    icon: "🇬🇧",
+    description: "文法、語彙、リスニング、スピーキング、ビジネス英語まで、英語力を総合的に鍛えます。",
+    category: "資格・試験",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/english-academy/"
+  },
+  {
+    id: "fp",
+    name: "fp-academy",
+    title: "FP3級アカデミー",
+    subtitle: "FP3級を図解で完全攻略",
+    color: "#059669",
+    icon: "💹",
+    description: "ライフプランニング、リスク管理、金融資産運用、タックス、不動産、相続まで、FP3級の全範囲を学びます。",
+    category: "資格・試験",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/fp-academy/"
+  },
+  {
+    id: "gakureki",
+    name: "gakureki-academy",
+    title: "学歴アカデミー",
+    subtitle: "日本の大学・学歴構造を体系的に学ぶ",
+    color: "#4f46e5",
+    icon: "🎓",
+    description: "大学ランキング、偏差値、就職実績、学閥、入試制度まで、日本の学歴社会を体系的に学びます。",
+    category: "教養・社会",
+    levels: 6,
+    modules: 24,
+    path: "https://musclelove-777.github.io/gakureki-academy/"
+  },
+  {
+    id: "genka",
+    name: "genka-academy",
+    title: "原価計算アカデミー",
+    subtitle: "原価計算の基礎から実践まで完全マスター",
+    color: "#0d9488",
+    icon: "🧮",
+    description: "個別原価計算、総合原価計算、標準原価計算、直接原価計算まで、原価計算の全手法を学びます。",
+    category: "経営・財務",
+    levels: 6,
+    modules: 24,
+    path: "https://musclelove-777.github.io/genka-academy/"
+  },
+  {
+    id: "hitokuchi",
+    name: "hitokuchi-academy",
+    title: "一口馬主アカデミー",
+    subtitle: "一口馬主の始め方から運用まで完全ガイド",
+    color: "#b45309",
+    icon: "🏇",
+    description: "クラブ選び、馬の選定、出資判断、配当金、税金対策まで、一口馬主の全知識を学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 48,
+    path: "https://musclelove-777.github.io/hitokuchi-academy/"
+  },
+  {
+    id: "invest",
+    name: "invest-academy",
+    title: "投資・資産運用アカデミー",
+    subtitle: "投資の基礎から実践的な資産運用まで",
+    color: "#15803d",
+    icon: "📈",
+    description: "株式、投資信託、債券、NISA、iDeCo、不動産投資まで、資産運用の全知識を体系的に学びます。",
+    category: "経営・財務",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/invest-academy/"
+  },
+  {
+    id: "keiba",
+    name: "keiba-academy",
+    title: "競馬アカデミー",
+    subtitle: "競馬の知識を基礎から極める",
+    color: "#166534",
+    icon: "🐎",
+    description: "馬券の種類、オッズの見方、血統理論、コース特性、データ分析まで、競馬の全知識を学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 48,
+    path: "https://musclelove-777.github.io/keiba-academy/"
+  },
+  {
+    id: "leadership",
+    name: "leadership-academy",
+    title: "リーダーシップアカデミー",
+    subtitle: "チームを導くリーダーシップを体系的に学ぶ",
+    color: "#1e40af",
+    icon: "👑",
+    description: "リーダーシップ理論、チームビルディング、モチベーション管理、意思決定、変革マネジメントまで学びます。",
+    category: "ビジネススキル",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/leadership-academy/"
+  },
+  {
+    id: "legal",
+    name: "legal-academy",
+    title: "契約書・法務基礎アカデミー",
+    subtitle: "ビジネスに必要な法務知識を完全マスター",
+    color: "#334155",
+    icon: "⚖️",
+    description: "契約書の読み方・作り方、NDA、業務委託、労働法、知的財産権まで、ビジネス法務を体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/legal-academy/"
+  },
+  {
+    id: "logical",
+    name: "logical-academy",
+    title: "ロジカルシンキングアカデミー",
+    subtitle: "論理的思考力を基礎から鍛える",
+    color: "#6d28d9",
+    icon: "🧠",
+    description: "MECE、ロジックツリー、ピラミッド構造、仮説思考、クリティカルシンキングまで体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/logical-academy/"
+  },
+  {
+    id: "marketing",
+    name: "marketing-academy",
+    title: "マーケティングアカデミー",
+    subtitle: "マーケティング戦略を基礎から実践まで",
+    color: "#e11d48",
+    icon: "📣",
+    description: "STP、4P、ブランディング、デジタルマーケティング、CRM、グロースハックまで体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/marketing-academy/"
+  },
+  {
+    id: "negotiation",
+    name: "negotiation-academy",
+    title: "交渉術アカデミー",
+    subtitle: "Win-Winの交渉スキルを身につける",
+    color: "#b91c1c",
+    icon: "🤝",
+    description: "交渉の準備、BATNA、利害分析、説得技術、クロージングまで、実践的な交渉術を体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/negotiation-academy/"
+  },
+  {
+    id: "ono",
+    name: "ono-academy",
+    title: "小野薬品アカデミー",
+    subtitle: "小野薬品工業を徹底研究",
+    color: "#0f766e",
+    icon: "💊",
+    description: "小野薬品の企業概要、パイプライン、オプジーボ、財務分析、競合比較まで徹底的に学びます。",
+    category: "企業・業界研究",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/ono-academy/"
+  },
+  {
+    id: "otsuka",
+    name: "otsuka-academy",
+    title: "大塚製薬アカデミー",
+    subtitle: "大塚ホールディングスを徹底研究",
+    color: "#0284c7",
+    icon: "🏥",
+    description: "大塚製薬の企業概要、製品群、パイプライン、財務分析、グローバル戦略まで徹底的に学びます。",
+    category: "企業・業界研究",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/otsuka-academy/"
+  },
+  {
+    id: "pachinko",
+    name: "pachinko-academy",
+    title: "パチンコアカデミー",
+    subtitle: "パチンコの知識を基礎から極める",
+    color: "#ca8a04",
+    icon: "🎰",
+    description: "台選び、スペック分析、回転率、ボーダー理論、止め打ち技術まで、パチンコの全知識を学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 48,
+    path: "https://musclelove-777.github.io/pachinko-academy/"
+  },
+  {
+    id: "pachislot",
+    name: "pachislot-academy",
+    title: "パチスロアカデミー",
+    subtitle: "パチスロの知識を基礎から極める",
+    color: "#d97706",
+    icon: "🎰",
+    description: "機種選び、設定判別、期待値計算、リール制御、立ち回り戦略まで、パチスロの全知識を学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 48,
+    path: "https://musclelove-777.github.io/pachislot-academy/"
+  },
+  {
+    id: "philosophy",
+    name: "philosophy-academy",
+    title: "哲学アカデミー",
+    subtitle: "古代から現代まで哲学の系譜を学ぶ",
+    color: "#581c87",
+    icon: "🏛️",
+    description: "ソクラテス、プラトン、カント、ニーチェ、実存主義、構造主義まで、哲学の系譜を体系的に学びます。",
+    category: "教養・社会",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/philosophy-academy/"
+  },
+  {
+    id: "photo",
+    name: "photo-academy",
+    title: "写真・カメラアカデミー",
+    subtitle: "撮影技術を基礎から実践まで学ぶ",
+    color: "#475569",
+    icon: "📷",
+    description: "カメラの基礎、露出、構図、ライティング、RAW現像、ポートレート、風景写真まで体系的に学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/photo-academy/"
+  },
+  {
+    id: "ppd",
+    name: "ppd-academy",
+    title: "PPDアカデミー",
+    subtitle: "PPDグループとCRO業界を徹底研究",
+    color: "#1e3a5f",
+    icon: "🏢",
+    description: "PPD（Thermo Fisher傘下）の企業概要、サービス、グローバル展開、競合比較まで徹底的に学びます。",
+    category: "企業・業界研究",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/ppd-academy/"
+  },
+  {
+    id: "presentation",
+    name: "presentation-academy",
+    title: "プレゼンアカデミー",
+    subtitle: "伝わるプレゼンテーション術を完全マスター",
+    color: "#ea580c",
+    icon: "🎤",
+    description: "スライド作成、ストーリー構成、デリバリー技術、Q&A対応まで、プレゼンスキルを体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/presentation-academy/"
+  },
+  {
+    id: "programming",
+    name: "programming-academy",
+    title: "プログラミングアカデミー",
+    subtitle: "プログラミングの基礎から実践まで",
+    color: "#059669",
+    icon: "💻",
+    description: "HTML/CSS、JavaScript、Python、Git、データベース、API開発まで、プログラミングスキルを体系的に学びます。",
+    category: "テクノロジー",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/programming-academy/"
+  },
+  {
+    id: "psychology",
+    name: "psychology-academy",
+    title: "心理学アカデミー",
+    subtitle: "心理学の基礎から応用まで体系的に学ぶ",
+    color: "#9333ea",
+    icon: "🧠",
+    description: "認知心理学、発達心理学、社会心理学、臨床心理学、行動経済学まで、心理学の全領域を学びます。",
+    category: "教養・社会",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/psychology-academy/"
+  },
+  {
+    id: "realestate",
+    name: "realestate-academy",
+    title: "不動産投資アカデミー",
+    subtitle: "不動産投資の基礎から実践まで",
+    color: "#92400e",
+    icon: "🏠",
+    description: "物件選定、利回り計算、融資戦略、管理運営、税務対策まで、不動産投資の全知識を学びます。",
+    category: "経営・財務",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/realestate-academy/"
+  },
+  {
+    id: "recruitment",
+    name: "recruitment-academy",
+    title: "採用アカデミー",
+    subtitle: "優秀な人材を採用する戦略を学ぶ",
+    color: "#0891b2",
+    icon: "👥",
+    description: "求人設計、面接技法、採用ブランディング、オンボーディングまで、採用の全プロセスを学びます。",
+    category: "ビジネススキル",
+    levels: 6,
+    modules: 20,
+    path: "https://musclelove-777.github.io/recruitment-academy/"
+  },
+  {
+    id: "retention",
+    name: "retention-academy",
+    title: "離職防止アカデミー",
+    subtitle: "社員の定着率を高める戦略を学ぶ",
+    color: "#be123c",
+    icon: "🔒",
+    description: "離職原因分析、エンゲージメント向上、1on1、キャリア開発支援まで、離職防止策を体系的に学びます。",
+    category: "ビジネススキル",
+    levels: 6,
+    modules: 20,
+    path: "https://musclelove-777.github.io/retention-academy/"
+  },
+  {
+    id: "sas",
+    name: "sas-academy",
+    title: "SASプログラミングアカデミー",
+    subtitle: "SASプログラミングを基礎から実践まで",
+    color: "#1e40af",
+    icon: "📊",
+    description: "DATA STEP、PROC SQL、マクロ、ODS、臨床試験プログラミングまで、SASの全スキルを学びます。",
+    category: "専門技術",
+    levels: 6,
+    modules: 24,
+    path: "https://musclelove-777.github.io/sas-academy/"
+  },
+  {
+    id: "senju",
+    name: "senju-academy",
+    title: "千寿製薬アカデミー",
+    subtitle: "千寿製薬を徹底研究",
+    color: "#0e7490",
+    icon: "👁️",
+    description: "千寿製薬の企業概要、眼科領域の製品群、パイプライン、財務分析まで徹底的に学びます。",
+    category: "企業・業界研究",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/senju-academy/"
+  },
+  {
+    id: "shionogi",
+    name: "shionogi-academy",
+    title: "塩野義製薬アカデミー",
+    subtitle: "塩野義製薬を徹底研究",
+    color: "#dc2626",
+    icon: "💊",
+    description: "塩野義製薬の企業概要、感染症領域、パイプライン、財務分析、競合比較まで徹底的に学びます。",
+    category: "企業・業界研究",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/shionogi-academy/"
+  },
+  {
+    id: "sleep",
+    name: "sleep-academy",
+    title: "睡眠アカデミー",
+    subtitle: "質の高い睡眠を科学的に学ぶ",
+    color: "#1e3a5f",
+    icon: "😴",
+    description: "睡眠メカニズム、サーカディアンリズム、睡眠環境、睡眠障害、快眠テクニックまで体系的に学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/sleep-academy/"
+  },
+  {
+    id: "snbl",
+    name: "snbl-academy",
+    title: "新日本科学アカデミー",
+    subtitle: "新日本科学を徹底研究",
+    color: "#15803d",
+    icon: "🔬",
+    description: "新日本科学の企業概要、前臨床CRO事業、トランスレーショナルリサーチ、財務分析まで学びます。",
+    category: "企業・業界研究",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/snbl-academy/"
+  },
+  {
+    id: "tax",
+    name: "tax-academy",
+    title: "節税アカデミー",
+    subtitle: "合法的な節税テクニックを完全マスター",
+    color: "#ca8a04",
+    icon: "💰",
+    description: "所得税、法人税、消費税、確定申告、経費計上、法人化、税制優遇まで、節税の全知識を学びます。",
+    category: "経営・財務",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/tax-academy/"
+  },
+  {
+    id: "tfl",
+    name: "tfl-academy",
+    title: "TFL作成アカデミー",
+    subtitle: "Table, Figure, Listingの作成を極める",
+    color: "#4338ca",
+    icon: "📊",
+    description: "臨床試験のTFL作成について、SASプログラミング、出力仕様、QC手法まで体系的に学びます。",
+    category: "専門技術",
+    levels: 6,
+    modules: 24,
+    path: "https://musclelove-777.github.io/tfl-academy/"
+  },
+  {
+    id: "tlf",
+    name: "tlf-academy",
+    title: "TLFアカデミー",
+    subtitle: "Tables, Listings, Figuresの全領域を網羅",
+    color: "#7c3aed",
+    icon: "📑",
+    description: "臨床試験のTLF出力について、統計解析計画との連携、SAS/R実装、バリデーションまで体系的に学びます。",
+    category: "専門技術",
+    levels: 13,
+    modules: 55,
+    path: "https://musclelove-777.github.io/tlf-academy/"
+  },
+  {
+    id: "wine",
+    name: "wine-academy",
+    title: "ワインアカデミー",
+    subtitle: "ワインの世界を基礎から極める",
+    color: "#7f1d1d",
+    icon: "🍷",
+    description: "ブドウ品種、産地、醸造、テイスティング、フードペアリングまで、ワインの知識を体系的に学びます。",
+    category: "ライフスキル",
+    levels: 12,
+    modules: 12,
+    path: "https://musclelove-777.github.io/wine-academy/"
   }
 ];
 
